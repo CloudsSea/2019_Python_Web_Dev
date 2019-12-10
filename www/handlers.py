@@ -11,7 +11,7 @@ from aiohttp import web
 from coroweb import get, post
 
 ## 分页管理以及调取API时的错误信息
-from apis import Page, APIValueError, APIResourceNotFoundError
+from apis import Page, APIValueError, APIResourceNotFoundError,APIError,APIPermissionError
 from models import User, Comment, Blog, next_id
 from config import configs
 
@@ -319,7 +319,7 @@ async def api_update_blog(id, request, *, name, summary, content):
     blog.name = name.strip()
     blog.summary = summary.strip()
     blog.content = content.strip()
-    await blog.update()
+    await blog.update()     
     return blog
 
 ## 删除日志API
