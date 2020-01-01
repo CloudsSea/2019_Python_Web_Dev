@@ -11,18 +11,18 @@ async def index(request):
     }
 
 @get('/api/doclasses')
-async def api_do_classes(*,commit):
-    the_class = do_classes(commit)
+async def api_do_classes(*, comment):
+    the_class = do_classes(comment)
     return dict(classes=the_class)
 
 @get('/api/reply')
-async def reply(*,commit):
-    commit = prediect_reply(commit)
-    return dict(commit=commit)
+async def reply(*, comment):
+    comment = prediect_reply(comment)
+    return dict(comment=comment)
 
-def prediect_reply(commit):
-    return commit
+def prediect_reply(comment):
+    return comment
 
 
-def do_classes(commit):
-    return commit
+def do_classes(comment):
+    return comment
