@@ -22,7 +22,7 @@ vocal_size = 906
 
 
 def get_train_data():
-    model = Word2Vec.load('./model/words_vec/wv.model')
+    model = Word2Vec.load('./model/word2vec/wv.model')
     words_list = model.wv.vocab
     print(words_list)
     x_batches = []

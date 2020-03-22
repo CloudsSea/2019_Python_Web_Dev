@@ -58,7 +58,7 @@ def train_vector():
     #     print(globals()['__doc__'] % locals())
     #     sys.exit(1)
 
-    inp, outp1, outp2 = ('./data/temp_result_cut.txt','./model/words_vec/wv.model','./model/words_vec/wv.vector')
+    inp, outp1, outp2 = ('./data/temp_result_cut.txt','./model/word2vec/wv.model','./model/word2vec/wv.vector')
     model = Word2Vec(LineSentence(inp), size=100, window=5, min_count=1, workers=multiprocessing.cpu_count())
     model.save(outp1)
     model.wv.save_word2vec_format(outp2, binary=False)
@@ -75,7 +75,7 @@ def theVectors():
 
 
 def save_ids():
-    model = Word2Vec.load('./model/words_vec/wv.model')
+    model = Word2Vec.load('./model/word2vec/wv.model')
     vector_dim = 100
     print(model)
     embedding_matrix = np.zeros((len(model.wv.vocab), vector_dim))
@@ -87,7 +87,7 @@ def save_ids():
 
 
 def similar():
-    model = Word2Vec.load('./model/words_vec/wv.model')
+    model = Word2Vec.load('./model/word2vec/wv.model')
     vector_dim = 100
     print(model)
     embedding_matrix = np.zeros((len(model.wv.vocab), vector_dim))
