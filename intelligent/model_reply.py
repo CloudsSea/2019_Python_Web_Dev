@@ -22,7 +22,6 @@ from tensorflow.keras.layers import (Bidirectional,
                                      Reshape,
                                      LSTM
                                     )
-from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.utils import to_categorical
 import time
 import re
@@ -73,20 +72,21 @@ def sample(preds, temperature=1.0):
     return np.argmax(probas)
 
 
+DIR = os.path.dirname(__file__)
 
 
 MAX_SEQUENCE_LENGTH = 100
 maxlen = 40
-checkpoint_dir = './checkpoints_reply'
+checkpoint_dir = os.path.join( DIR,'checkpoints_reply')
 
-file_name = './word2vec/Word2Vec_word_200.model'
+file_name = os.path.join( DIR,'word2vec/Word2Vec_word_200.model')
 print('loading')
 model_word2vec = Word2Vec.load(file_name)
 print("add word2vec finished....")
-json_str= json.load(open('tokenizer_config.json', 'r'))
+json_str= json.load(open(os.path.join( DIR,'tokenizer_config.json'), 'r'))
 tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(json_str)
 word_vocab = tokenizer.word_index
-embedding_matrix = np.load('./idsMatrix.npy')
+embedding_matrix = np.load(os.path.join( DIR,'idsMatrix.npy'))
 word_vocal_reverse = {}
 word_vocal_reverse[0] = 'SPACE'
 
