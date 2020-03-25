@@ -128,14 +128,16 @@ def do_classes(text):
     preds = model.predict(input, verbose=0)
     print(preds)
 
-    result =  np.argmax(preds,axis=1) - 1
+    results =  (np.argmax(preds,axis=1) - 1)
+    result = results[0]
+    print(result)
     if result == -1:
         print('伤心')
     elif result == 0:
         print('客观')
     else:
         print('开心')
-    return result
+    return str(result)
 
 if __name__ == '__main__':
     print(len(word_vocab))

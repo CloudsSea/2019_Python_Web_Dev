@@ -14,7 +14,7 @@ async def index(request):
 @get('/api/doclasses')
 async def api_do_classes(*, comment):
     the_class = do_classes(comment)
-    return the_class
+    return dict(classes=the_class)
 
 @get('/api/reply')
 async def reply(*, comment):
@@ -27,3 +27,8 @@ def prediect_reply(comment):
 
 def do_classes(comment):
     return model_classes.do_classes(comment)
+
+if __name__ == '__main__':
+    the_class = do_classes("武汉加油")
+    temp = dict(classes=the_class)
+    print(temp)
