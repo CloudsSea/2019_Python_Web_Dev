@@ -1,6 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
-intelligent/word2vec
-intelligent/checkpoints_classes
-intelligent/checkpoints_reply
-intelligent/*.json
-intelligent/*.npy
+intelligent/modelclasses/checkpoints_classes
+intelligent/modelreply/checkpoints_reply
+*.npy
+*.json
