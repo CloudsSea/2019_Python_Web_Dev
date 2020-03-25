@@ -83,7 +83,7 @@ def clean_sentence(line1):
 
 
 def read_data(flag):
-    temp_file = './data/temp.txt'
+    temp_file = '../data/temp.txt'
     print('hello')
     if flag:
         result = []
@@ -96,7 +96,7 @@ def read_data(flag):
                         result.append(new_line)
                     else:
                         result.append(new_line+'\n')
-        with open('./data/temp_result.txt', 'w',encoding='utf-8') as f:
+        with open('../data/temp_result.txt', 'w', encoding='utf-8') as f:
             for line in result:
                 f.write(line)
     if not flag:

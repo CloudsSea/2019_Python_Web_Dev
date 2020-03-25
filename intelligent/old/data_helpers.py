@@ -30,13 +30,13 @@ def get_train_data():
     y_batches_predict = []
     lines = []
     lables = []
-    with open('./data/temp_result_cut.txt', 'r', encoding='utf-8') as f:
+    with open('../data/temp_result_cut.txt', 'r', encoding='utf-8') as f:
         lines_all = f.readlines()
         for line in lines_all:
             words = line.split(" ")
             lines.append(words)
     # print(lines)
-    with open('./data/label_copy.txt', 'r', encoding='utf-8') as f:
+    with open('../data/label_copy.txt', 'r', encoding='utf-8') as f:
         lables = f.readlines()
     # print(lables)
     lables = [float(label) for label in lables]
@@ -94,7 +94,7 @@ def read_data():
     # TODO 6. 嘉伦的刘海的微博视频 7. 啊啊啊啊啊啊啊啊 8. ヽ(‘⌒´メ)ノ 8 . （分享自 @音悦台 ）
     # TODO 9 查看图片  10  回复@XXX:  11.  ... 全文 12.微博饭票 13 位置: 句子最后, 城市·地点
     # TODO 13 做一个统计, 空格之间常见短语过滤  14. 《xxx》书名 15. 过滤英文
-    temp_file = './data/temp.txt'
+    temp_file = '../data/temp.txt'
     print('hello')
     with open(temp_file, 'r', encoding='utf-8') as f:
         pass
@@ -130,7 +130,7 @@ def demo3():
                     continue
                 print(line)
                 lines.append(line)
-        with open('./data/temp.txt', 'w',encoding='utf-8') as f:
+        with open('../data/temp.txt', 'w', encoding='utf-8') as f:
             for line in lines:
                 f.write(line)
 
@@ -139,7 +139,7 @@ def demo3():
 
 
 def model_predict(output_datas):
-    ids = np.load('./idsMatrix.npy')
+    ids = np.load('../idsMatrix.npy')
     # 文字清洗
     # 排序(长短) 处理多长的语句, 语句的统计? 最长的 3/4的长度
     #
@@ -196,7 +196,7 @@ def model_predict(output_datas):
 
 #
 def model_classify(output):
-    ids = np.load('./idsMatrix.npy')
+    ids = np.load('../idsMatrix.npy')
     # 文字清洗
     # 排序(长短) 处理多长的语句, 语句的统计? 最长的 3/4的长度
     #

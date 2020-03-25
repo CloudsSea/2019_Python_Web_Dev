@@ -3,3 +3,4 @@ intelligent/word2vec
 intelligent/checkpoints_classes
 intelligent/checkpoints_reply
 intelligent/*.json
+intelligent/*.npy

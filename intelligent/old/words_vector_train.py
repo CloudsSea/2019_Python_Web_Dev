@@ -28,7 +28,7 @@ def cut_words(sentence):
 
 
 def read_txt_cut():
-    with codecs.open('./data/temp_result_clean.txt','r',encoding="utf8") as f:
+    with codecs.open('../data/temp_result_clean.txt', 'r', encoding="utf8") as f:
     # with codecs.open('./data/in_the_name_of_people.txt','r',encoding="utf8") as f:
         line = f.readline()
         line_num = 1
@@ -41,7 +41,7 @@ def read_txt_cut():
             next_line = clean_sentences(next_line)
             if line_num % 16 == 0 or not next_line:
                 after_cut = map(cut_words, curr)
-                with codecs.open("./data/temp_result_cut.txt", 'w',encoding="utf8") as target:
+                with codecs.open("../data/temp_result_cut.txt", 'w', encoding="utf8") as target:
                     target.writelines(after_cut)
                     print('saved', line_num, 'articles')
 
@@ -64,7 +64,7 @@ def train_vector():
     model.wv.save_word2vec_format(outp2, binary=False)
 
 def clean_demo():
-    with codecs.open('./data/temp_result_clean.txt','r',encoding="utf8") as f:
+    with codecs.open('../data/temp_result_clean.txt', 'r', encoding="utf8") as f:
         lines = f.readlines()
         for line in lines:
             print(clean_sentences(line))
