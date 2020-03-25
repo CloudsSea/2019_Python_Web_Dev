@@ -135,6 +135,7 @@ def do_classes(text):
         print('客观')
     else:
         print('开心')
+    return result;
 
 if __name__ == '__main__':
     print(len(word_vocab))
