@@ -79,10 +79,10 @@ MAX_SEQUENCE_LENGTH = 100
 maxlen = 40
 checkpoint_dir = os.path.join( DIR,'checkpoints_reply')
 
-file_name = os.path.join( DIR,'word2vec/Word2Vec_word_200.model')
-print('loading')
-model_word2vec = Word2Vec.load(file_name)
-print("add word2vec finished....")
+# file_name = os.path.join( DIR,'word2vec/Word2Vec_word_200.model')
+# print('loading')
+# model_word2vec = Word2Vec.load(file_name)
+# print("add word2vec finished....")
 json_str= json.load(open(os.path.join( DIR,'tokenizer_config.json'), 'r'))
 tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(json_str)
 word_vocab = tokenizer.word_index

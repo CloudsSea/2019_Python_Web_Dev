@@ -1,7 +1,8 @@
 from models import User
 from coroweb import get
 import asyncio
-from intelligent import model_reply
+from intelligent.modelreply import model_reply
+from intelligent.modelclasses import model_classes
 @get('/')
 async def index(request):
     users = await User.findAll()
@@ -25,4 +26,4 @@ def prediect_reply(comment):
 
 
 def do_classes(comment):
-    return comment
+    return model_classes.do_classes(comment)
