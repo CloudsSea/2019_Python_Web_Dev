@@ -14,7 +14,7 @@ async def index(request):
 @get('/api/doclasses')
 async def api_do_classes(*, comment):
     the_class = do_classes(comment)
-    return dict(classes=the_class)
+    return the_class
 
 @get('/api/reply')
 async def reply(*, comment):
