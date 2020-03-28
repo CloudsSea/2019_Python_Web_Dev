@@ -4,9 +4,8 @@ FROM cloudsseas/anaconda_thesis_env:v1.1
 #RUN apt-get -y install nginx
 
 #centos 通过yum安装nginx在usr/local ,ubuntu 通过apt-get安装,在usr/share
-COPY nginx.conf /usr/share/nginx/conf/html
-
 COPY www /app
 WORKDIR /app
+COPY nginx.conf /usr/share/nginx/conf/
 EXPOSE 5000
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
