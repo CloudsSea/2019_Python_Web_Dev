@@ -1,4 +1,4 @@
-FROM cloudsseas/anaconda_thesis_env:v1.0
+FROM cloudsseas/anaconda_thesis_env:v1.1
 # 镜像里已经更新,且安装了
 #RUN apt-get update
 #RUN apt-get -y install nginx
